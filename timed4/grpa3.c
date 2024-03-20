@@ -4,7 +4,7 @@
 void rightCircularShift(int arr[], int N, int k)
 {
     // Write Solution code
-    int temp[N];
+    int* temp = (int*)malloc(N*sizeof(int));
     for (int i = 0; i < N; i++)
     {
         temp[i] = arr[i];
