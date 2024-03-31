@@ -44,6 +44,7 @@ int main()
 {
     struct Student *head;
     head = studentList();
+    // Printing a Linked List 👇🏻👇🏻
     while (head != NULL)
     {
         printf("%s\n", head->name);
