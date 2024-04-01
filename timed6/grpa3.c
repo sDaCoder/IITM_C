@@ -11,7 +11,25 @@ Array2D inverted_identity_matrix(int n)
 {
     // genarate inverted array of order n
     // solution
+    Array2D a;
+    a.dim0 = n;
+    a.dim1 = n;
 
+    a.vals = (int **)malloc(a.dim0 * sizeof(int *));
+    for (int i = 1; i <= a.dim0; i++)
+    {
+        a.vals[i - 1] = (int*)malloc((a.dim1)*sizeof(int));
+        for (int j = 1; j <= a.dim1; j++)
+        {
+            if (i == j)
+            {
+                a.vals[i - 1][j - 1] = 0;
+            }
+            else a.vals[i - 1][j - 1] = 1;
+        }
+        
+    }
+    return a;
     // end of solution
 }
 
@@ -19,7 +37,15 @@ void print_array2d(Array2D *a)
 {
     // print the inverted array
     // solution
-
+    for (int i = 1; i <= a->dim0; i++)
+    {
+        for (int j = 1; j <= a->dim1; j++)
+        {
+            printf("%d ", a->vals[i - 1][j - 1]);
+        }
+        printf("\n");
+    }
+    
     // end of solution
 }
 // suffix
